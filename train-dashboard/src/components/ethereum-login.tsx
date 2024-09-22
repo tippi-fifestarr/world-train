@@ -28,7 +28,7 @@ export function EthereumLoginForm() {
       checkNetwork()
       getBalance()
     }
-  }, [isConnected])
+  }, [isConnected, walletAddress, balance])
 
   const connectWallet = async () => {
     if (typeof window.ethereum !== 'undefined') {
