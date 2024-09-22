@@ -5,6 +5,10 @@ deploy your first few smart contracts
 ## Welcome to World Train, Fifestarr
 Mr. Tippi Fifestarr, as conductor on a World Train, you are responsible for the experience of your passengers (VIP or not) and crew.
 
+## Use-case and front-end
+
+To make a catchy learning experience, we have a custom front-end and specific use case for these contracts that will be the first deployed!
+
 ## What use are smart contracts?
 
 1. [World Train v0](./train.sol): TrainID, Track Conductor, Passengers
@@ -14,6 +18,9 @@ Mr. Tippi Fifestarr, as conductor on a World Train, you are responsible for the 
 ### Write
 
 Considerations?
+- Simplicity
+- Repetition
+- Modular
 
 ### Compile
 
