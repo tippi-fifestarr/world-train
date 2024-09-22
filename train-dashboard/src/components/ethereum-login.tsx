@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from "next/link"
+import { ethers } from 'ethers'
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -13,15 +14,27 @@ import {
 
 export function EthereumLoginForm() {
   const [isConnected, setIsConnected] = useState(false)
+  const [walletAddress, setWalletAddress] = useState("")
 
   const connectWallet = async () => {
-    // This is a placeholder for the actual wallet connection logic
-    // You would typically use a library like ethers.js or web3.js here
-    console.log("Connecting wallet...")
-    // Simulating a connection after 1 second
-    setTimeout(() => {
-      setIsConnected(true)
-    }, 1000)
+    if (typeof window.ethereum !== 'undefined') {
+      try {
+        const provider = new ethers.BrowserProvider(window.ethereum)
+        await provider.send("eth_requestAccounts", [])
+  
+        const signer = await provider.getSigner()
+        const address = await signer.getAddress()
+  
+        setWalletAddress(address)
+        setIsConnected(true)
+  
+        console.log("Wallet connected:", address)
+      } catch (error) {
+        console.error("Failed to connect wallet:", error)
+      }
+    } else {
+      console.error("Ethereum wallet is not installed. Please install MetaMask or another wallet.")
+    }
   }
 
   return (
@@ -46,6 +59,13 @@ export function EthereumLoginForm() {
             </Link>
           )}
         </div>
+
+        {isConnected && (
+          <div className="mt-4 text-center">
+            <p>Connected wallet: {walletAddress}</p>
+          </div>
+        )}
+
         <div className="mt-4 text-center text-sm">
           Don&apos;t have an Ethereum wallet?{" "}
           <Link href="https://ethereum.org/en/wallets/" className="underline">
