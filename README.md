@@ -7,13 +7,13 @@ Mr. Tippi Fifestarr, as conductor on a World Train, you are responsible for the 
 
 ## What use are smart contracts?
 
-1. World Train v0: TrainID, Track Conductor, Passengers
+1. [World Train v0](./train.sol): TrainID, Track Conductor, Passengers
 2. Passenger Ticketing Agent v0: Allow a passenger to buy a ticket (normal or VIP), or upgrade to VIP
 3. World Train v1: Access Control allow Tippi to issue CREW_ROLE, which permits access to CheckIn in any car, Cars.
 
 ### Write
 
-Considerations
+Considerations?
 
 ### Compile
 
