@@ -1,8 +1,5 @@
-// World Train v0: TrainID, Track Conductor, Passengers
-// v0.0: Trains & Conductor
-// v0.1: Restructured
-// comment out (and delete for final release) future values for v1
-// v1 goal:  Access Control allow Tippi to issue CREW_ROLE, which permits access to CheckIn in any car, and lots of features.
+// World Train v0: TrainID, Track Conductor, Passengers, VIP Passengers, Welcome Passenger, Add Train
+// v1.0 goal:  Access Control allow Tippi to issue CREW_ROLE, which permits access to CheckIn in any car, and lots of features.
 
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
